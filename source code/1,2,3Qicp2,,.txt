@@ -1,0 +1,51 @@
+#1. Write a program, which reads height (feet.) of N students into a list and convert these heights to cm in a separate list:
+L1=[]### list array
+n=int(input("Enter number of students :"))### asking for input from user
+for i in range(0,n):
+    ele = input()
+    L1.append(ele)### appending inputs from user
+print(L1)##printng list
+abc=float(L1[0])
+de=float(L1[1])
+ghi=float(L1[2])
+jkl=float(L1[3])
+cm=[abc/0.0328,de/0.0328,ghi/0.0328,jkl/0.0328]##validating user input to output
+print("length in cm:",round(cm[0],1),round(cm[1],1),round(cm[2],1),round(cm[3],1))### printing output
+
+
+#2.Given a non-negative integer num, return the number of steps to reduce it to zero.
+#If the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.”
+def count(m):##function declaration
+    if(m==0):
+        return 0
+    else:
+        return 1 + count(m // 10)
+def countSteps(x):##function declaration
+    c = 0###declaration
+    last = x
+    while(last):###while loop starts
+        digits = count(last)
+        digits -= 1
+        divisor = pow(10, digits)
+        first = last // divisor
+        lastnumber = first * divisor
+        skipped = (last - lastnumber) // first
+        skipped += 1
+        c += skipped
+        last = last - (first * skipped)
+    return c
+n=int(input("input number:"))###asking input from user
+print("no of steps taken",countSteps(n))###printing the result
+
+#3.Write a python program to find the wordcount in a file for each line and then print the output.
+# Finally store the output back to the file.
+def word_count(str):###function initiation
+    counts = dict()
+    words = str.split()### using split from python library to separate words
+    for word in words:### for loop starts
+        if word in counts: ### word not gets repeated if present in the sentence
+            counts[word] += 1
+        else:
+            counts[word] = 1
+    return counts
+print(word_count(input("enter sentences:")))#### printing output word count
