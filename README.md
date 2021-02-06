@@ -1,6 +1,6 @@
 # Mallikarjun Edara
 #student id: 16314907
-Question1:
+# Question1:
 # Write a program, which reads height (feet.) of N students into a list and convert these heights to cm in a separate list
 ![Screenshot (2)](https://user-images.githubusercontent.com/63585043/107132126-ee2ecd00-68a1-11eb-9762-6d913e1b67e2.png)
 Question2:
